@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #F2F0E9;
+    --secondary-color: #000000;
+    --text-color-1: #000000;
+    --text-color-2: #fff;
+    --text-color-3: #de5839;
+    --secondary-text-color: #8a8989;
+    --font-size-large: 18px;
+    --font-size-small: 18px;
+}
+
+@font-face {
+    font-family: 'Cadho';
+    src: url(./fonts/CadhoToysRegular.ttf);
+}
+
+
+@font-face {
+    font-family: 'zora';
+    src: url(./fonts/ZORA.otf);
+}
+
+@font-face {
+    font-family: 'neutralFace-bold';
+    src: url(./fonts/NoheimFonts/NeutralFace-Bold.otf);
+}
+
+@font-face {
+    font-family: 'nohemiRegular';
+    src: url(./fonts/NoheimFonts/Nohemi-Regular-BF6438cc4d0e493.ttf);
+}
+
+@font-face {
+    font-family: 'nohemiBold';
+    src: url(./fonts/NoheimFonts/Nohemi-Bold-BF6438cc587b5b5.ttf);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'neutralFace-normal', sans-serif;
+    letter-spacing: 2px;
+}
+
+a{
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    z-index: 1000;
+}
+
+ul{
+    list-style: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hover__link__white{
+    color: var(--secondary-text-color);
+    transition: color 0.2s ease-in, letter-spacing 0.2s ease-in;
+}
+
+.hover__link__white:hover {
+    color: var(--primary-color);
+    letter-spacing: 5px;
+}
