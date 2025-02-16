@@ -1,46 +1,69 @@
 <script setup>
-
+import ThreeFooter from "@/components/ThreeFooter.vue";
 </script>
 
 <template>
-  <footer class="footer">
-    <div class="container d-flex flex-column justify-content-end  py-5">
-      <h2 class="mb-5 pb-5">Let's Contact 😎</h2>
-      <div class="row mt-5 pt-5">
-        <div class="col border-top me-3 border-opacity-25">
-          <h3 class="py-3 fs-1">SOCIAL</h3>
-          <ul class="ps-0">
-            <li class="pb-2"><a class=" links pb-5" href="https://github.com/doc-souhail" target=”_blank”>Github</a></li>
-            <li class="pb-2"><a class="links pb-5" href="#" target=”_blank”>Twitter</a></li>
-            <li class="pb-2"><a class="links pb-5" href="https://www.linkedin.com/in/souhail-naji-3ba02726b/" target=”_blank”>Linkedin</a></li>
-          </ul>
-        </div>
-        <div class="col border-top border-opacity-25">
-          <h3 class="py-3 fs-1">CONTACT</h3>
-          <ul class="ps-0">
-            <li class="pb-2"><a class="links pb-5" href="#" target=”_blank”>Phone</a></li>
-            <li class="pb-2" ><a class="links pb-5" href="souhail888@hotmail.com" target=”_blank”>E-mail</a></li>
-          </ul>
-        </div>
+
+  <footer>
+    <div class="box-1 mb-5">
+      <div class="pe-0 me-0">
+        <ul class="d-flex  justify-content-around py-5">
+          <li><a class="footer_links p-2 rounded-2" href="https://www.linkedin.com/in/souhail-naji-3ba02726b/">LINKEDIN</a></li>
+          <li><a class="footer_links p-2 rounded-2" href="https://github.com/doc-souhail">GITHUB</a></li>
+          <li><a class="footer_links p-2 rounded-2" href="https://www.instagram.com/moooore__protein/">INSTAGRAM
+          </a></li>
+          <li><a class="footer_links p-2 rounded-2" href="#">DRIBBBLE</a></li>
+          <li><a class="footer_links p-2 rounded-2" href="#">BEHANCE</a></li>
+        </ul>
+      </div>
+      <div class="px-5">
+        <p class="text-capitalize text-center mt-5">
+          tu veux forger quelque chose contacte moi
+        </p>
       </div>
     </div>
+    <div class="droits text-center">
+      <p>[Designé & Développé par Souhail Naji ©2025 Tous droits réservés]</p>
+    </div>
   </footer>
+
 </template>
 
 <style scoped>
-.footer{
-  background-color: var(--secondary-color);
+
+
+footer{
+  width: 100vw;
+  height: 100vh;
+  background: var(--text-color-1);
   color: var(--text-color-2);
 }
 
-h2{
-  font-size: 120px;
-  font-family: 'nohemiBold', sans-serif;
+footer .box-1{
+  max-width: 100%;
+}
+
+footer a{
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+.footer_links{
+  transition: background-color 0.3s ease-in;
+}
+
+footer p{
+  font-size: 6vw;
+  font-family: "zora", sans-serif;
+}
+
+.droits p{
+  font-size: 14px;
+  font-family: "nohemiRegular", sans-serif;
   text-transform: uppercase;
 }
-.links{
-  font-size: 13px;
-  text-transform: capitalize;
-  font-family: 'nohemiRegular', sans-serif;
-}
+
+
+
+
 </style>

@@ -42,7 +42,7 @@ html {
 
 body{
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--text-color-1);
     font-family: 'neutralFace-normal', sans-serif;
     letter-spacing: 2px;
 }
@@ -50,7 +50,7 @@ body{
 a{
     position: relative;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color-2);
     z-index: 1000;
 }
 
@@ -73,4 +73,8 @@ ul{
 .hover__link__white:hover {
     color: var(--primary-color);
     letter-spacing: 5px;
+}
+
+.footer_links:hover{
+    background-color: var(--text-color-3);
 }

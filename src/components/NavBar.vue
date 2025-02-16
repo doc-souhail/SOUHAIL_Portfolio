@@ -96,7 +96,7 @@ watch(route, () => {
 }
 
 .menu__modale {
-  z-index: 999;
+  z-index: 10000;
   background-color: var(--secondary-color);
   color: var(--primary-color);
   width: 60vw;
