@@ -13,6 +13,7 @@ const router = createRouter({
       component: HomeView,
       meta: {
         showFooter: false,
+        transition: 'zoom',
       },
 
     },
@@ -22,6 +23,7 @@ const router = createRouter({
       component: WorksView,
       meta: {
         showFooter: true,
+        transition: 'zoom',
       }
     },
     {
@@ -30,6 +32,7 @@ const router = createRouter({
       component: ContactView,
       meta: {
         showFooter: true,
+        transition: 'zoom',
       }
     },
     {
@@ -38,6 +41,7 @@ const router = createRouter({
       component: AboutView,
       meta: {
         showFooter: true,
+        transition: 'zoom',
       }
     },
   ],

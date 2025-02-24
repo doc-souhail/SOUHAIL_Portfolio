@@ -41,20 +41,20 @@ watch(route, () => {
       <ul class="p-0">
         <li class="pb-2">
           <router-link class="hover__link__white text-capitalize" to="/" @click="closeModal"><span class="pe-2">1</span>
-            accueil
+            HOME
           </router-link>
         </li>
         <li class="pb-2">
-          <router-link class="hover__link__white text-capitalize" to="/about" @click="closeModal"><span>2</span> à propos
+          <router-link class="hover__link__white text-capitalize" to="/about" @click="closeModal"><span>2</span> ABOUT
           </router-link>
         </li>
         <li class="pb-2">
-          <router-link class="hover__link__white text-capitalize" to="/works" @click="closeModal"><span>3</span> projets
+          <router-link class="hover__link__white text-capitalize" to="/works" @click="closeModal"><span>3</span> WORKS
           </router-link>
         </li>
         <li class="pb-2">
           <router-link class="hover__link__white text-capitalize" to="/contact" @click="closeModal"><span>4</span>
-             contact</router-link>
+             CONTACT</router-link>
         </li>
       </ul>
     </div>
@@ -64,7 +64,7 @@ watch(route, () => {
         <p>@moooore__protein</p>
       </div>
       <div>
-        <div class="text-capitalize">Web Developer & UI Designer 🫡</div>
+        <div class="text-capitalize">Software Developer & UI Designer 🫡</div>
       </div>
     </div>
   </div>

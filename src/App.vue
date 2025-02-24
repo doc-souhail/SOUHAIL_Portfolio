@@ -21,10 +21,21 @@ onMounted(() => {
 <template>
   <LoadingOverlay ref="loadingOverlay" />
   <NavBar/>
-  <RouterView />
+  <Transition :name="$route.meta.transition" mode="out-in">
+    <RouterView />
+  </Transition>
   <Footer v-if="$route.meta.showFooter" />
 </template>
 
 <style scoped>
-
+/* Transition zoom */
+.zoom-enter-active, .zoom-leave-active {
+  transition: transform 0.5s ease-in-out;
+}
+.zoom-enter-from {
+  transform: scale(0.8);
+}
+.zoom-leave-to {
+  transform: scale(1.2);
+}
 </style>
