@@ -49,7 +49,7 @@ footer a{
 
 .footer_links{
   transition: background-color 0.3s ease-in;
-}npm
+}
 
 footer p{
   font-size: 6vw;
