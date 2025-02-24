@@ -16,7 +16,7 @@ onMounted(() => {
 
   gsap.to(container, {
     x: "-50%",
-    duration: 15,
+    duration: 30,
     ease: "linear",
     repeat: -1
   });

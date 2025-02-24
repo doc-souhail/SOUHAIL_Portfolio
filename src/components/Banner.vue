@@ -9,12 +9,12 @@ const props = defineProps({
 
 <template>
   <section class="container hero__section mt-4">
-    <p class="text-end">[{{year}}]</p>
+    <p class="text-end mb-0">[{{year}}]</p>
     <div>
       <h1 class="text-start word">{{title}}<span> —</span></h1>
     </div>
     <div class="pt-3">
-      <h2 class="text-end word">{{subtitle}}</h2>
+      <h2 class="text-end word mb-0">{{subtitle}}</h2>
     </div>
     <p class="mb-0">[{{location}}]</p>
   </section>

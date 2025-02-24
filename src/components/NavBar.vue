@@ -1,6 +1,24 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import gsap from "gsap";
+
+const marqueeTextNav =
+    ref("BRAND DESIGN • ILLUSTRATION • WEB DEVELOPMENT • UI DESIGN • CREATIVE • BRAND DESIGN • WEB DEVELOPMENT");
+
+onMounted(() => {
+
+  const container = document.querySelector(".marquee-inner-nav");
+
+  container.innerHTML += container.innerHTML;
+
+  gsap.to(container, {
+    x: "-50%",
+    duration: 30,
+    ease: "linear",
+    repeat: -1
+  });
+});
 
 const isModalOpen = ref(false);
 const route = useRoute();
@@ -18,8 +36,13 @@ watch(route, () => {
 });
 </script>
 <template>
+  <div class="marqueeNav">
+    <div class="marquee-inner-nav">
+      {{ marqueeTextNav }}
+    </div>
+  </div>
   <nav class="container">
-    <ul class="d-flex justify-content-between align-items-center ps-0 py-3">
+    <ul class="d-flex justify-content-between align-items-center ps-0 pt-3 mb-0">
       <li class="logo__name position-relative">
         <span class="time text-nowrap" id="date"></span>
         <router-link class="hover__link__white" to="/">
@@ -153,6 +176,29 @@ watch(route, () => {
   100% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+}
+
+
+.marqueeNav {
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  background: black;
+  font-size: 25px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+.marquee-inner {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  min-width: max-content;
 }
 
 

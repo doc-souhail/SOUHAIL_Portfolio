@@ -17,12 +17,12 @@
       </div>
       <div class="px-5">
         <p class="text-capitalize text-center mt-5">
-          tu veux forger quelque chose contacte moi
+          You want to forge something contact me
         </p>
       </div>
     </div>
     <div class="droits text-center">
-      <p>[Designé & Développé par Souhail Naji ©2025 Tous droits réservés]</p>
+      <p>[Designed & developed by Souhail © 2025 Wish All rights reserved]</p>
     </div>
   </footer>
 
