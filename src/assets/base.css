@@ -3,7 +3,7 @@
     --secondary-color: #000000;
     --text-color-1: #000000;
     --text-color-2: #fff;
-    --text-color-3: #de5839;
+    --text-color-3: #ffd436;
     --secondary-text-color: #8a8989;
     --font-size-large: 18px;
     --font-size-small: 18px;
@@ -77,4 +77,5 @@ ul{
 
 .footer_links:hover{
     background-color: var(--text-color-3);
+    color: var(--text-color-1);
 }

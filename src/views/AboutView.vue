@@ -53,21 +53,33 @@ onMounted(() => {
     },
   });
 
-  // Animation du texte dans le portfolio pendant le scroll
+
   gsap.utils.toArray('.portfolio-text').forEach((textElement) => {
     gsap.from(textElement, {
       opacity: 0,
-      y: 100, // Déplace le texte vers le bas avant qu'il n'apparaisse
+      y: 100,
       duration: 1.5,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: textElement,
-        start: 'top bottom', // L'animation démarre lorsque l'élément atteint le bas de la fenêtre
-        end: 'bottom top', // L'animation se termine lorsque l'élément atteint le haut de la fenêtre
-        scrub: 1, // Cela synchronise l'animation avec le scroll
-        once: true, // L'animation ne se répète pas
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+        once: true,
       },
     });
+  });
+
+  gsap.to(".bg", {
+    inset: "0px",
+    duration: 0.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".bg",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
   });
 
 });
@@ -97,24 +109,30 @@ onMounted(() => {
   <section class="img-container">
     <img src="../assets/imgs/beach.webp" class="w-100 img-fluid parallax-img" alt="Beach">
   </section>
-  <section class="container mt-5">
+  <section class="position-relative">
     <div class="bg"></div>
-    <h3 class="text-uppercase pb-5 text-center">My Journey into Web Development </h3>
+    <section class="container mt-5 ">
+      <h3 class="text-uppercase pb-5 text-center">My Journey into Web Development </h3>
+    </section>
+    <section class="px-5  text-center">
+      <p class="fw-bold fs-1 text-uppercase text-about animate">
+        I started my journey in tech by modding games like GTA San Andreas and exploring Linux,
+        where I experimented with hacking Wi-Fi passwords back when WEP security was weak.
+        My real introduction to coding came at university when a friend showed me Arduino,
+        but I quickly gravitated toward web development. I began with HTML, CSS,
+        then pursued formal studies in computer science and web development, learning Python, C.
+        While I liked problem-solving, I quickly realized I wanted to build real applications rather than focus on pure theory.
+        Through internships and freelance work,
+        I gained hands-on experience, eventually specializing in Java (Spring Boot),
+        Angular, VueJs, and UI/UX design. Today, I focus on building scalable applications while constantly improving my
+        skills.
+      </p>
+      <div class="py-5 text-uppercase ">
+        <h3 class="">My stack</h3>
+        <p class="fw-bold fs-1 text-uppercase">Java / PHP / Spring boot / Angular / VueJs / Gsap </p>
+      </div>
+    </section>
   </section>
-  <div class="px-5">
-    <p class="text-center fw-bold fs-1 text-uppercase text-about animate">
-      I started my journey in tech by modding games like GTA San Andreas and exploring Linux,
-      where I experimented with hacking Wi-Fi passwords back when WEP security was weak.
-      My real introduction to coding came at university when a friend showed me Arduino,
-      but I quickly gravitated toward web development. I began with HTML, CSS,
-      then pursued formal studies in computer science and web development, learning Python, C.
-      While I liked problem-solving, I quickly realized I wanted to build real applications rather than focus on pure theory.
-      Through internships and freelance work,
-      I gained hands-on experience, eventually specializing in Java (Spring Boot),
-      Angular, VueJs, and UI/UX design. Today, I focus on building scalable applications while constantly improving my
-      skills.
-    </p>
-  </div>
 
 </template>
 
@@ -166,6 +184,13 @@ h3{
     line-height: 38px;
 }
 
-
+.bg {
+  position: absolute;
+  background: #ffd436;
+  display: block;
+  opacity: 1;
+  z-index: -1;
+  inset: 332.516px;
+}
 
 </style>
