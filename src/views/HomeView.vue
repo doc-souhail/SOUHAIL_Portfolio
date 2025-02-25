@@ -8,7 +8,7 @@ import Banner from "@/components/Banner.vue";
       year="2025"
       title="Software"
       subtitle="Developer"
-      location="Actuellement à Bordeaux"
+      location="Portfolio In Progress 🐢"
   />
 </template>
 
