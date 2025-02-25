@@ -1,9 +1,15 @@
 <script setup>
 
+import Banner from "@/components/Banner.vue";
 </script>
 
 <template>
-<h1 class="display-5">Comming soon "Contact page"</h1>
+  <Banner
+      year="2025"
+      title="Let's Talk"
+      subtitle="Get in Touch"
+      location="Available Worldwide"
+  />
 </template>
 
 <style scoped>

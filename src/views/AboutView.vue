@@ -3,8 +3,8 @@
 import Banner from "@/components/Banner.vue";
 import gsap from "gsap";
 import SplitType from "split-type";
-
 import ScrollTrigger from "gsap/ScrollTrigger";
+
 import {onMounted, ref} from "vue";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,9 +40,7 @@ onMounted(() => {
     types: 'lines, words, chars',
     tagName: 'span',
   });
-
-
-  gsap.from('.text-about .word', {
+  gsap.from('.text-about .line', {
     opacity: 0.3,
     duration: 0.1,
     ease: 'power1.out',
@@ -107,7 +105,7 @@ onMounted(() => {
     </div>
   </div>
   <section class="img-container">
-    <img src="../assets/imgs/beach.webp" class="w-100 img-fluid parallax-img" alt="Beach">
+    <img src="../assets/imgs/beach.webp" class="w-100 img-fluid parallax-img position-relative" alt="Beach">
   </section>
   <section class="position-relative">
     <div class="bg"></div>
@@ -128,7 +126,7 @@ onMounted(() => {
         skills.
       </p>
       <div class="py-5 text-uppercase ">
-        <h3 class="">My stack</h3>
+        <h3 class="">My stack <span> —</span></h3>
         <p class="fw-bold fs-1 text-uppercase">Java / PHP / Spring boot / Angular / VueJs / Gsap </p>
       </div>
     </section>
@@ -192,5 +190,11 @@ h3{
   z-index: -1;
   inset: 332.516px;
 }
+
+span{
+  color: #4C60E6;
+}
+
+
 
 </style>

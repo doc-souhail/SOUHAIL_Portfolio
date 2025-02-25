@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import gsap from "gsap";
 
 const marqueeTextNav =
-    ref("BRAND DESIGN • ILLUSTRATION • WEB DEVELOPMENT • UI DESIGN • CREATIVE • BRAND DESIGN • WEB DEVELOPMENT • ");
+    ref("ILLUSTRATION • PHP • UI DESIGN • VUE.JS  • WEB DEVELOPMENT • JAVA • WEB DEVELOPMENT • CREATIVE • ANGULAR • ");
 
 onMounted(() => {
 
