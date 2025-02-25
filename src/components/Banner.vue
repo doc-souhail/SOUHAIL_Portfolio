@@ -28,7 +28,7 @@ const props = defineProps({
   font-family: 'neutralFace-bold', sans-serif;
   font-size: 11vw;
   color: var(--text-color-1);
-  font-weight: 900;
+  font-weight: 200;
   letter-spacing: -5px;
 }
 

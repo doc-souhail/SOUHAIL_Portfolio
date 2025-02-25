@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import gsap from "gsap";
 
 const marqueeTextNav =
-    ref("BRAND DESIGN • ILLUSTRATION • WEB DEVELOPMENT • UI DESIGN • CREATIVE • BRAND DESIGN • WEB DEVELOPMENT");
+    ref("BRAND DESIGN • ILLUSTRATION • WEB DEVELOPMENT • UI DESIGN • CREATIVE • BRAND DESIGN • WEB DEVELOPMENT • ");
 
 onMounted(() => {
 
@@ -14,7 +14,7 @@ onMounted(() => {
 
   gsap.to(container, {
     x: "-50%",
-    duration: 30,
+    duration: 60,
     ease: "linear",
     repeat: -1
   });
