@@ -47,30 +47,15 @@ onMounted(() => {
     stagger: 0.1,
     scrollTrigger: {
       trigger: '.text-about',
-      start: 'top center',
+      start: 'top 80%', // Active l'animation plus tôt
+      end: 'bottom top',
+      scrub: false,
     },
-  });
-
-
-  gsap.utils.toArray('.portfolio-text').forEach((textElement) => {
-    gsap.from(textElement, {
-      opacity: 0,
-      y: 100,
-      duration: 1.5,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: textElement,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-        once: true,
-      },
-    });
   });
 
   gsap.to(".bg", {
     inset: "0px",
-    duration: 0.5,
+    duration: 0.1,
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".bg",
@@ -110,7 +95,7 @@ onMounted(() => {
   <section class="position-relative">
     <div class="bg"></div>
     <section class="container mt-5 ">
-      <h3 class="text-uppercase pb-5 text-center">My Journey into Web Development </h3>
+      <h3 class="text-uppercase pb-5 text-center portfolio-text">My Journey into Web Development </h3>
     </section>
     <section class="px-5  text-center">
       <p class="fw-bold fs-1 text-uppercase text-about animate">
@@ -125,7 +110,7 @@ onMounted(() => {
         Angular, VueJs, and UI/UX design. Today, I focus on building scalable applications while constantly improving my
         skills.
       </p>
-      <div class="py-5 text-uppercase ">
+      <div class="py-5 text-uppercase portfolio-text">
         <h3 class="">My stack <span> —</span></h3>
         <p class="fw-bold fs-1 text-uppercase">Java / PHP / Spring boot / Angular / VueJs / Gsap </p>
       </div>
@@ -188,7 +173,7 @@ h3{
   display: block;
   opacity: 1;
   z-index: -1;
-  inset: 332.516px;
+  inset: 50px;
 }
 
 span{
