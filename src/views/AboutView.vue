@@ -42,7 +42,7 @@ onMounted(() => {
   });
   gsap.from('.text-about .line', {
     opacity: 0.3,
-    duration: 0.1,
+    duration: 0.5,
     ease: 'power1.out',
     stagger: 0.1,
     scrollTrigger: {
