@@ -40,14 +40,14 @@ onMounted(() => {
     types: 'lines, words, chars',
     tagName: 'span',
   });
-  gsap.from('.text-about .line', {
+  gsap.from('.text-about .word', {
     opacity: 0.3,
-    duration: 0.9,
+    duration: 0.5,
     ease: 'power1.out',
     stagger: 0.1,
     scrollTrigger: {
       trigger: '.text-about',
-      start: 'top 80%', // Active l'animation plus tôt
+      start: 'top 80%',
       end: 'bottom top',
       scrub: false,
     },
