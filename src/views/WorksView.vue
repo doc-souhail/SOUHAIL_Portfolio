@@ -3,22 +3,31 @@ import Banner from "@/components/Banner.vue";
 import gsap from "gsap";
 import {onMounted} from "vue";
 
-
-onMounted( () => {
-  gsap.to(".bg-w", {
-    inset: "100px",
-    duration: 0.1,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".bg-w",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: 1,
-    },
+onMounted(() => {
+  const links = document.querySelectorAll(".link-item");
+  links.forEach((link) => {
+    const arrow = link.querySelector(".arrow-icon");
+    gsap.set(arrow, { y: 30, rotate: -45, opacity: 0 });
+    link.addEventListener("mouseenter", () => {
+      gsap.to(arrow, {
+        y: 0,
+        rotate: 0,
+        opacity: 1,
+        duration: 0.4,
+        ease: "power3.out",
+      });
+    });
+    link.addEventListener("mouseleave", () => {
+      gsap.to(arrow, {
+        y: 30,
+        rotate: -45,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power3.in",
+      });
+    });
   });
-})
-
-
+});
 
 </script>
 
@@ -31,38 +40,58 @@ onMounted( () => {
   />
 
   <section class="my-5 position-relative">
-  <div class="bg-w"></div>
   <div class="container">
-    <div class="py-5">
+    <div class="py-5 my-5">
       <h2>RECENT WORKS</h2>
     </div>
-    <div class="border-bottom border-2 border-black"></div>
     <div class="Projects text-uppercase ">
 
-      <a href="https://quickeeeer.softr.app/">
-        <div class="py-5 d-flex">
-          <p>Quickeeeer</p>
-          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
-        </div>
-      </a>
-      <a href="https://bento-1-1a7a35.webflow.io/">
-        <div class="py-5 d-flex">
-          <p>Bento Design</p>
-          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
-        </div>
-      </a>
-      <a href="">
-        <div class="py-5 d-flex">
-          <p>The EveryThing blog</p>
-          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
-        </div>
-      </a>
-      <a href="">
-        <div class="py-5 d-flex">
-          <p>Snake Game</p>
-          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
-        </div>
-      </a>
+      <div class="links border-top">
+        <a class="link-item" href="https://quickeeeer.softr.app/">
+          <div class="py-5 d-flex align-items-center">
+            <p class="pb-0 mb-0">Quickeeeer</p>
+            <span class="stack text-capitalize ps-4">Softr / Bootstrap</span>
+            <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+          </div>
+        </a>
+      </div>
+
+      <div class="border-top links">
+        <a class="link-item" href="https://bento-1-1a7a35.webflow.io/">
+          <div class="py-5 d-flex align-items-center">
+            <p>Bento Design</p>
+            <span class="stack text-capitalize ps-4">WebFlow</span>
+            <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+          </div>
+        </a>
+      </div>
+      <div class="border-top links">
+        <a class="link-item" href="">
+          <div class="py-5 d-flex align-items-center">
+            <p>The EveryThing blog</p>
+            <span class="stack text-capitalize ps-4">RestAPI / Java / Spring Boot / Junit</span>
+            <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+          </div>
+        </a>
+      </div>
+      <div class="border-top links">
+        <a class="link-item" href="">
+          <div class="py-5 d-flex align-items-center">
+            <p>Snake Game</p>
+            <span class="stack text-capitalize ps-4">Java</span>
+            <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+          </div>
+        </a>
+      </div>
+      <div class="border-top border-bottom links">
+        <a class="link-item" href="">
+          <div class="py-5 d-flex align-items-center">
+            <p>Goofy portfolio</p>
+            <span class="stack text-capitalize ps-4">VueJs</span>
+            <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+          </div>
+        </a>
+      </div>
     </div>
   </div>
   </section>
@@ -71,30 +100,43 @@ onMounted( () => {
 
 <style scoped>
 
-.bg-w {
-  position: absolute;
-  background: #ffd436;
-  display: block;
-  opacity: 1;
-  z-index: -1;
-  inset: 50px;
-}
-
 h2{
-  font-size: 9vw;
+  font-size: 8vw;
+  font-family: 'Rothefight', sans-serif;
 }
 
+.links{
+  transition: 0.5s ease-in-out;
+}
 
-.Projects a{
+.links:hover{
+  background-color: var(--text-color-3);
+}
+
+.link-item{
   color: var(--text-color-1);
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-family: 'Rothefight', sans-serif;
   font-weight: bold;
   letter-spacing: 3px;
+  transition: 0.4s ease-in-out;
 }
 
-.arrow-icon{
-  width: 120px
+.arrow-icon {
+  width: 140px;
+  transform-origin: center; /* Ensures smooth rotation */
+}
+
+.link-item:hover{
+  letter-spacing: 6px;
+  font-size: 4.7vw;
+}
+
+.stack{
+  font-size: 1.2vw;
+  letter-spacing: 1px;
+  font-family: 'neutralFace-bold', sans-serif;
+
 }
 
 </style>

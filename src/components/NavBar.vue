@@ -110,6 +110,7 @@ watch(route, () => {
   width: 60px;
 }
 
+
 .time {
   position: absolute;
   left: 80px;
