@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import WorksView from "@/views/WorksView.vue";
 import AboutView from "@/views/AboutView.vue";
 import ContactView from "@/views/ContactView.vue";
+import NotFoundView from '@/views/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +42,13 @@ const router = createRouter({
       component: AboutView,
       meta: {
         showFooter: true,
+        transition: 'zoom',
+      }
+    },
+    { path: '/:pathMatch(.*)*',
+      component: NotFoundView,
+      meta: {
+        showFooter: false,
         transition: 'zoom',
       }
     },

@@ -16,13 +16,13 @@
         </ul>
       </div>
       <div class="px-5">
-        <p class="text-capitalize text-center mt-5">
+        <p class="text-uppercase text-center mt-5">
           You want to forge something contact me
         </p>
       </div>
     </div>
     <div class="droits text-center">
-      <p>[Designed & developed by Souhail © 2025 Wish All rights reserved]</p>
+      <p>[Designed & developed by Souhail © 2025 All rights reserved]</p>
     </div>
   </footer>
 
@@ -44,7 +44,8 @@ footer .box-1{
 
 footer a{
   font-size: 14px;
-  letter-spacing: -1px;
+  //letter-spacing: -1px;
+  font-family: "Rothefight", sans-serif;
 }
 
 .footer_links{
@@ -53,7 +54,9 @@ footer a{
 
 footer p{
   font-size: 6vw;
-  font-family: "zora", sans-serif;
+  font-family: "Rothefight", sans-serif;
+  line-height: 2;
+
 }
 
 .droits p{

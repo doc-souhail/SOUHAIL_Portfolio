@@ -54,7 +54,7 @@ watch(route, () => {
       </li>
     </ul>
   </nav>
-
+  <div class="overlay" @click="toggleModal" :class="{ 'active_overlay': isModalOpen }"></div>
   <div
       v-show="isModalOpen"
       class="menu__modale ps-5 pe-5 rounded-3 d-flex flex-column justify-content-between"
@@ -114,7 +114,7 @@ watch(route, () => {
 .time {
   position: absolute;
   left: 80px;
-  top: 20px;
+  top: 30px;
   font-size: 13px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -127,11 +127,33 @@ watch(route, () => {
   height: auto;
   position: absolute;
   right: 180px;
-  top: 20px;
+  top: 60px;
   transform: translateY(-20px);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+}
+
+.overlay{
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: rgba( 255, 255, 255, 0 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.overlay.active_overlay {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu__modale.active_modale {
@@ -193,13 +215,6 @@ watch(route, () => {
   align-items: center;
   position: relative;
   white-space: nowrap;
-}
-
-.marquee-inner {
-  display: flex;
-  gap: 2rem;
-  white-space: nowrap;
-  min-width: max-content;
 }
 
 
