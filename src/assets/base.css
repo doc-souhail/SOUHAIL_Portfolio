@@ -9,10 +9,6 @@
     --font-size-small: 18px;
 }
 
-@font-face {
-    font-family: 'Cadho';
-    src: url(./fonts/CadhoToysRegular.ttf);
-}
 
 
 @font-face {
@@ -34,6 +30,12 @@
     font-family: 'nohemiBold';
     src: url(./fonts/NoheimFonts/Nohemi-Bold-BF6438cc587b5b5.ttf);
 }
+
+@font-face {
+    font-family: 'Rothefight';
+    src: url(./fonts/Rothefight-1jG1Z.otf);
+}
+
 
 
 html {

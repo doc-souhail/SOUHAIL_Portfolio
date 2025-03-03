@@ -1,64 +1,24 @@
 <script setup>
 import Banner from "@/components/Banner.vue";
-
-
-import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
+import {onMounted} from "vue";
 
-const preview = ref(null);
-const previewImg = ref(null);
 
-const projects = [
-  { id: "p1", name: "Quickeeeer", location: "Bordeaux", category: "CMS", year: "2025", img: "Quickeeeer.png" },
-  { id: "p2", name: "Bunto", location: "Bordeaux", category: "CMS", year: "2025", img: "Webflow.png" },
-  { id: "p3", name: "Bloggy", location: "Paris", category: "API", year: "2024", img: "Quickeeeer.png" },
-];
-
-let isInside = false;
-let projectElements = [];
-
-const movePreview = (e) => {
-  const mouseInside = isMouseInsideContainer(e);
-
-  if (mouseInside !== isInside) {
-    isInside = mouseInside;
-    gsap.to(preview.value, { scale: isInside ? 1 : 0, duration: 0.3 });
-  }
-
-  preview.value.style.left = `${e.pageX - 125}px`;
-  preview.value.style.top = `${e.pageY - 125}px`;
-};
-
-const updatePreviewImage = (img) => {
-  gsap.to(previewImg.value, { opacity: 0, duration: 0.2, onComplete: () => {
-      previewImg.value.style.backgroundImage = `url('/ImgProjects/${img}')`; // Chemin correct
-      gsap.to(previewImg.value, { opacity: 1, duration: 0.3 });
-    }});
-};
-
-const isMouseInsideContainer = (e) => {
-  const containerRect = document.querySelector(".projects").getBoundingClientRect();
-  return e.clientX >= containerRect.left &&
-      e.clientX <= containerRect.right &&
-      e.clientY >= containerRect.top &&
-      e.clientY <= containerRect.bottom;
-};
-
-onMounted(() => {
-  projectElements = Array.from(document.querySelectorAll(".project"));
-  projectElements.forEach((project, index) => {
-    project.addEventListener("mouseenter", () => updatePreviewImage(projects[index].img));
+onMounted( () => {
+  gsap.to(".bg-w", {
+    inset: "100px",
+    duration: 0.1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".bg-w",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1,
+    },
   });
+})
 
-  window.addEventListener("mousemove", movePreview);
-});
 
-onUnmounted(() => {
-  window.removeEventListener("mousemove", movePreview);
-  projectElements.forEach((project) => {
-    project.removeEventListener("mouseenter", updatePreviewImage);
-  });
-});
 
 </script>
 
@@ -69,107 +29,72 @@ onUnmounted(() => {
       subtitle="Cool Stuff"
       location="Crafted with Code 👩‍💻"
   />
+
+  <section class="my-5 position-relative">
+  <div class="bg-w"></div>
   <div class="container">
-    <div ref="preview" class="preview">
-      <div ref="previewImg" class="preview-img"></div>
+    <div class="py-5">
+      <h2>RECENT WORKS</h2>
     </div>
+    <div class="border-bottom border-2 border-black"></div>
+    <div class="Projects text-uppercase ">
 
-    <div class="container my-5">
-      <div class="projects">
-        <div class="project header">
-          <div class="client"><p>Project</p></div>
-          <div class="location"><p>Location</p></div>
-          <div class="service"><p>Category</p></div>
-          <div class="year"><p>Year</p></div>
+      <a href="https://quickeeeer.softr.app/">
+        <div class="py-5 d-flex">
+          <p>Quickeeeer</p>
+          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
         </div>
-
-        <div v-for="project in projects" :key="project.id" class="project">
-          <div class="client"><p>{{ project.name }}</p></div>
-          <div class="location"><p>{{ project.location }}</p></div>
-          <div class="service"><p>{{ project.category }}</p></div>
-          <div class="year"><p>{{ project.year }}</p></div>
+      </a>
+      <a href="https://bento-1-1a7a35.webflow.io/">
+        <div class="py-5 d-flex">
+          <p>Bento Design</p>
+          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
         </div>
-      </div>
+      </a>
+      <a href="">
+        <div class="py-5 d-flex">
+          <p>The EveryThing blog</p>
+          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+        </div>
+      </a>
+      <a href="">
+        <div class="py-5 d-flex">
+          <p>Snake Game</p>
+          <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
+        </div>
+      </a>
     </div>
   </div>
+  </section>
+
 </template>
 
-<Footer/>
+<style scoped>
 
-
-
-<style>
-.preview {
+.bg-w {
   position: absolute;
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-  pointer-events: none;
-  transform-origin: center;
-  transform: scale(0);
-  z-index: 2;
-  border-radius: 10px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  background: #ffd436;
+  display: block;
+  opacity: 1;
+  z-index: -1;
+  inset: 50px;
 }
 
-.preview-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 0.3s ease-in-out;
+h2{
+  font-size: 9vw;
 }
 
-p {
-  font-size: 14px;
-  text-transform: uppercase;
-  line-height: 100%;
+
+.Projects a{
+  color: var(--text-color-1);
+  font-size: 5vw;
+  font-family: 'Rothefight', sans-serif;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 
-.header p {
-  opacity: 0.5;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-}
-
-.project {
-  width: 100%;
-  padding: 2.5em 1em;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.project:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.project > div {
-  flex: 3;
-}
-
-.project div:last-child {
-  flex: 1;
-}
-
-@media (max-width: 900px) {
-  .location, .service {
-    display: none;
-  }
+.arrow-icon{
+  width: 120px
 }
 
 </style>
