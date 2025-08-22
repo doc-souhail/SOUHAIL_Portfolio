@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import {onMounted, ref} from "vue";
 gsap.registerPlugin(ScrollTrigger);
 
-const marqueeText = ref("🚀 Hire Me • Hire Me • Hire Me 🚀 Hire Me • Hire Me • Hire Me ");
+const marqueeText = ref("🚀 Hire Me • Hire Me 🚀 • Hire Me • Hire Me 🚀 Hire Me • Hire Me ");
 
 
 onMounted(() => {
@@ -77,15 +77,15 @@ onMounted(() => {
   />
 <section class="container">
 <div class="row mt-1">
-  <p class="col text-uppercase fs-6">
-    A full-stack developer, UI designer, and tech enthusiast navigating the digital universe 🌍.
+  <p class="col text-uppercase fs-6 text-center text-sm-start">
+    A Software Developer, UI designer, and tech enthusiast navigating the digital universe 🌍.
     Currently based in Bordeaux, but always exploring new technologies and ideas.
   </p>
-  <div class="col"></div>
+  <div class="col d-none d-md-block"></div>
 </div>
 </section>
   <div class="marquee">
-    <div class="marquee-inner">
+    <div class="marquee-inner fs-1">
       {{ marqueeText }}
     </div>
   </div>
@@ -98,7 +98,7 @@ onMounted(() => {
       <h3 class="text-uppercase pb-5 text-center portfolio-text">My Journey into Web Development </h3>
     </section>
     <section class="px-5  text-center">
-      <p class="fw-bold fs-1 text-uppercase text-about animate">
+      <p class="fw-bold fs-2 text-uppercase text-about animate l">
         I started my journey in tech by modding games like GTA San Andreas and exploring Linux,
         where I experimented with hacking Wi-Fi passwords back when WEP security was weak.
         My real introduction to coding came at university when a friend showed me Arduino,
@@ -125,7 +125,7 @@ onMounted(() => {
   width: 100%;
   overflow: hidden;
   color: black;
-  font-size: 60px;
+  /* font-size: 60px; */
   font-weight: bold;
   text-transform: uppercase;
   padding: 10px 0;
@@ -178,6 +178,16 @@ h3{
 
 span{
   color: #4C60E6;
+}
+
+@media screen and (max-width: 768px) {
+h3{
+  letter-spacing: -2px;
+}
+.text-about{
+    line-height: 29px;
+    
+}
 }
 
 

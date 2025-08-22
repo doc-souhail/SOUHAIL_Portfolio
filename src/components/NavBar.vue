@@ -44,7 +44,7 @@ watch(route, () => {
   <nav class="container">
     <ul class="d-flex justify-content-between align-items-center ps-0 pt-3 mb-0">
       <li class="logo__name position-relative">
-        <span class="time text-nowrap" id="date"></span>
+        <span class="time text-nowrap " id="date"></span>
         <router-link class="hover__link__white" to="/">
           <img src="../assets/imgs/noun-happy-face-6015012.svg" alt="smily-face">
         </router-link>
@@ -115,7 +115,7 @@ watch(route, () => {
   position: absolute;
   left: 80px;
   top: 30px;
-  font-size: 13px;
+  font-size: clamp(8px, 1vw + 7px, 13px);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -215,6 +215,22 @@ watch(route, () => {
   align-items: center;
   position: relative;
   white-space: nowrap;
+}
+
+
+@media screen and (max-width: 768px) {
+.menu__modale {
+  width: 100%;
+  right: 0;
+  left: 0;
+}
+.modale_body ul li a {
+  font-size: 30px;
+}
+
+.modale_footer{
+  font-size: 10px;
+}
 }
 
 

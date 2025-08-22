@@ -9,38 +9,20 @@ const props = defineProps({
 
 <template>
   <section class="container hero__section mt-4">
-    <p class="text-end mb-0">[{{year}}]</p>
+    <p class="text-center text-sm-end mb-0">[{{year}}]</p>
     <div>
-      <h1 class="text-start word">{{title}}<span> —</span></h1>
+      <h1 class="text-center text-sm-start word title">{{title}}<span> —</span></h1>
     </div>
     <div class="pt-3">
-      <h2 class="text-end word mb-0">{{subtitle}}</h2>
+      <h2 class="text-center text-sm-end word mb-0 subtitle ">{{subtitle}}</h2>
     </div>
-    <p class="mb-0">[{{location}}]</p>
+    <div class="mt-1">
+        <p class="text-center text-sm-start">[{{location}}]</p>
+    </div>
   </section>
 </template>
 
 <style scoped>
-.hero__section{
-  max-height: 80vh;
-}
-.hero__section h1{
-  font-family: 'neutralFace-bold', sans-serif;
-  font-size: 11vw;
-  color: var(--text-color-1);
-  font-weight: 200;
-  letter-spacing: -5px;
-}
-
-.hero__section h2{
-  font-family: "zora", sans-serif;
-  font-size: 10vw;
-  color: var(--text-color-1);
-}
-
-.hero__section p{
-  font-size: 11px;
-}
 
 span{
   color: #4C60E6;

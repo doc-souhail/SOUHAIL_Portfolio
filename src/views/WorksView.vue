@@ -42,14 +42,14 @@ onMounted(() => {
   <section class="my-5 position-relative">
   <div class="container">
     <div class="py-5 my-5">
-      <h2>RECENT WORKS</h2>
+      <h2 class="text-center text-sm-start">RECENT WORKS</h2>
     </div>
     <div class="Projects text-uppercase ">
 
       <div class="links border-top">
         <a class="link-item" href="https://quickeeeer.softr.app/">
           <div class="py-5 d-flex align-items-center">
-            <p class="ps-4 mb-0">Quickeeeer</p>
+            <p class="ps-4 mb-0 lh-1">Quickeeeer</p>
             <span class="stack text-capitalize ps-4">Softr / Bootstrap</span>
             <img src="../assets/imgs/arrow.svg" class="arrow-icon" alt="arrow-icon">
           </div>
@@ -136,7 +136,7 @@ h2{
 }
 
 .stack{
-  font-size: 1.2vw;
+  font-size: 18px;
   letter-spacing: 1px;
   font-family: 'neutralFace-bold', sans-serif;
 

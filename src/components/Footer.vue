@@ -6,13 +6,13 @@
   <footer>
     <div class="box-1 mb-5">
       <div class="pe-0 me-0">
-        <ul class="d-flex  justify-content-around py-5">
-          <li><a class="footer_links p-2 rounded-2" href="https://www.linkedin.com/in/souhail-naji-3ba02726b/">LINKEDIN</a></li>
-          <li><a class="footer_links p-2 rounded-2" href="https://github.com/doc-souhail">GITHUB</a></li>
-          <li><a class="footer_links p-2 rounded-2" href="https://www.instagram.com/moooore__protein/">INSTAGRAM
+        <ul class="d-flex  justify-content-around py-5 ps-0">
+          <li><a target="_blank" class="footer_links p-2 rounded-2" href="https://www.linkedin.com/in/souhail-naji-3ba02726b/">LINKEDIN</a></li>
+          <li><a target="_blank" class="footer_links p-2 rounded-2" href="https://github.com/doc-souhail">GITHUB</a></li>
+          <li><a target="_blank" class="footer_links p-2 rounded-2" href="https://www.instagram.com/moooore__protein/">INSTAGRAM
           </a></li>
-          <li><a class="footer_links p-2 rounded-2" href="#">DRIBBBLE</a></li>
-          <li><a class="footer_links p-2 rounded-2" href="#">BEHANCE</a></li>
+          <li><a target="_blank" class="footer_links p-2 rounded-2" href="">DRIBBBLE</a></li>
+          <li><a target="_blank" class="footer_links p-2 rounded-2" href="">BEHANCE</a></li>
         </ul>
       </div>
       <div class="px-5">
